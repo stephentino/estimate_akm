@@ -18,7 +18,7 @@ where $\alpha_i$ is the person effect for individual $i$, $\psi_j$ is the firm e
 
 ### Data
 
-This code was originally tested using Canadian matched employer-employee data, called the Canadian Employer-Employee Dynamics Database (CEEDD). The CEEDD is a set of linkable files that provide matched data between individuals and firms in the Canadian labour market, which is why it is called 'matched employer-employee data'. The data extract that I worked with contained the universe of individuals and firms in Canada from 2001 to 2019. The underlying linkable files of the CEEDD are derived from administrative data sources maintained by Statistics Canada. Several key components of the CEEDD are:
+This code was originally tested using Canadian matched employer-employee data, called the Canadian Employer-Employee Dynamics Database (CEEDD). The CEEDD is a set of linkable files that provide matched data between individuals and firms in the Canadian labour market, which is why it is called 'matched employer-employee data'. The data extract that I worked with contained information on the universe of individuals and firms in Canada from 2001 to 2019. The underlying linkable files of the CEEDD are derived from administrative data sources maintained by Statistics Canada. Several key components of the CEEDD are:
 - the T1 Personal Master File (T1PMF), which contains individual-level data derived from T1 tax returns
 - the T4 Record of Employment (T4ROE), which contains job-level data from individual T4 slips and records of employment (ROEs) issued by firms to their employees
 - the National Accounts Longitudinal Microdata File (NALMF), which is derived from tax data or the business registrar (BR)
