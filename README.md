@@ -47,4 +47,5 @@ Since the CEEDD data is not available for public use, I provide simulated data t
     - Restrict the sample of jobs that are "full-time equivalent", i.e. ,those that pay at least $18,377 (in 2012 dollars)
     - Restrict the sample to individuals who are not missing marital status, birth year, or gender
     - Remove small firms with low value added or revenue
+    - Restrict the sample of firms to those in the business sector only
 
