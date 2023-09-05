@@ -8,7 +8,7 @@ These programs can be used to estimate an AKM-style two-way fixed effects model 
 
 ### AKM models
 
-The AKM model assumes that the log of an individual's earnings can be decomposed into a the sum of a person effect, a firm effect, a time-varying index of individual characteristics, and a residual. (These models are called 'AKM' models thanks to the influential work by Abowd, Kramarz, and Margolis 1999). Formally, the AKM model posits that the log earnings of individual $i$ at firm $j$ at time $t$ can be written as:
+The AKM model assumes that the log of an individual's earnings can be decomposed into a the sum of a person effect, a firm effect, a time-varying index of individual characteristics, and a residual. (These models are called 'AKM' models thanks to the influential work by Abowd, Kramarz, and Margolis 1999.) Formally, the AKM model posits that the log earnings of individual $i$ at firm $j$ at time $t$ can be written as:
 
 $y_{ijt} = \alpha_i + \psi_j + \beta'X_{it} + \varepsilon_{ijt},$
 
