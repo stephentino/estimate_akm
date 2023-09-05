@@ -39,7 +39,5 @@ Since the CEEDD data is not available for public use, I provide simulated data t
 
 ## Overview of the code
 
-### Challenges
-
-It is challenging to estimate an AKM-style model with the CEEDD because the CEEDD is a very large dataset. 
+### 1_prepare_data.R 
 
