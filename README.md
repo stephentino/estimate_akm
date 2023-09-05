@@ -18,7 +18,7 @@ where $\alpha_i$ is the person effect for individual $i$, $\psi_j$ is the firm e
 
 ### Identification
 
-Firm effects are only identified for firms in a "connected set", meaning that they are connected by workers who move between them. In addition, for the estimator of the firm effects to be unbiased, firm-to-firm mobility must be uncorrelated with time-varying unobservables.
+The firm effects are identified for firms that are "connected". Two firms are "connected" if there exists a worker who is employed by . In addition, for the estimator of the firm effects to be unbiased, firm-to-firm mobility must be uncorrelated with time-varying unobservables.
 
 
 ## Data
