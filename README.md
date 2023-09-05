@@ -32,7 +32,7 @@ The code was originally used with Canadian matched employer-employee data, calle
 
 The CEEDD contains info on the *universe* of individuals, firms, and jobs in Canada from 2001 to 2020.
 
-Since the CEEDD data is not available for public use, I provide simulated data to run the code in this repository. The simulated data matches the structure of the CEEDD, but other than that, the data is entirely fabricated and is not related to the CEEDD in any way.
+Since the CEEDD data is not available for public use, I provide simulated data to run the code in this repository. The simulated data matches the structure of the CEEDD (i.e., similar variable names etc.), but other than that, the data is entirely fabricated and is not related to the true Canadian data in any way.
 
 
 ## Overview of the code
