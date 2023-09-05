@@ -1,5 +1,7 @@
 # Estimating a two-way fixed effect models using Canadian matched employer-employee data
 
+[Summary](#About-the-repository)
+
 ## About the repository
 
 These programs can be used to estimate an AKM-style two-way fixed effects model using Canadian matched employer-employee data. Simulated data to test the code is provided, since the Canadian matched employer-employee data is not available to the public. 
