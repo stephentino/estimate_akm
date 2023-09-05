@@ -62,7 +62,7 @@ Since the CEEDD data is not available for public use, I provide simulated data t
 - First, this code applies some additional filters to the data that are required before akm estimation:
     - Restricts the sample to workers and firms observed at least twice
     - Restricts the sample to the largest connected set of workers and firms. Note: the firms and workers in the matched employer-employee data form a "graph" where the nodes are firms and the edges are workers' firm-to-firm transitions. The "largest connected set" of workers and firms is the maximal connected subgraph. The maximal connected subgraph is extracted using the *igraph* package.
-- Next, the code estimates the AKM-style two-way fixed effects model. All of the coefficients and fixed effects are estimated jointly (in contrast to the "two-step procedure" that is discussed below.) To estimate the model, the *lfe* package is used.
+- Next, the code estimates the AKM-style two-way fixed effects model using the final sample of workers and firms. All of the coefficients and fixed effects are estimated jointly (in contrast to the "two-step procedure" that is discussed below.) To estimate the model, the *lfe* package is used.
 
 ####
 
