@@ -18,7 +18,7 @@ where $\alpha_i$ is the person effect for individual $i$, $\psi_j$ is the firm e
 
 ### Identification
 
-Identification of the person and firm effects requires restricting the sample to a "connected set" of workers and firms.
+Identification of the firm effects uses *movers*, i.e., individuals who move across firms. Therefore, identification of the firm effects is only possible within a "connected set" of firms. A "connected set" of firms is a set of firms who are indirectly linked via workers who move between them.  
 
 
 ## Data
