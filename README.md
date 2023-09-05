@@ -43,5 +43,5 @@ Since the CEEDD data is not available for public use, I provide simulated data t
 
 #### 1_prepare_data.R 
 - Cleans and merges the different datasets to create the matched employer-employee dataset used to estimate the AKM model. I apply the same filters to the simulated data that were originally applied to the CEEDD:
--- 
+ - test
 
