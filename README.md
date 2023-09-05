@@ -21,7 +21,9 @@ where $\alpha_i$ is the person effect for individual $i$, $\psi_j$ is the firm e
 Identification of the person and firm effects requires restricting the sample to a "connected set" of workers and firms.
 
 
-### Data
+## Data
+
+### The Canadian Employer-Employee Database (CEEDD)
 
 The code was originally used with Canadian matched employer-employee data, called the Canadian Employer-Employee Dynamics Database (CEEDD). The underlying linkable files of the CEEDD are derived from administrative data sources maintained by Statistics Canada. Several key components of the CEEDD are:
 - the T1 Personal Master File (T1PMF), which contains individual-level data (e.g. gender, age, marital status, ...) 
@@ -30,6 +32,8 @@ The code was originally used with Canadian matched employer-employee data, calle
 
 The CEEDD contains info on the *universe* of individuals, firms, and jobs in Canada from 2001 to 2020, meaning that it is a very large dataset.
 
-Since the CEEDD data is not available for public use, I provide simulated data to run the code in this repository. 
+Since the CEEDD data is not available for public use, I provide simulated data to run the code in this repository.
+
+### Simulated data
 
 ## Overview of the code
