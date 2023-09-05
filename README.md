@@ -43,5 +43,8 @@ Since the CEEDD data is not available for public use, I provide simulated data t
 
 #### 1_prepare_data.R 
 - Cleans and merges the different datasets to create the matched employer-employee dataset used to estimate the AKM model. I apply the same filters to the simulated data that were originally applied to the CEEDD:
-    - testing 
+    - Restrict the sample of jobs to "primary jobs" only, which are those that pay each individual the most in each year
+    - Restrict the sample of jobs that are "full-time equivalent", i.e. ,those that pay at least $18,377 (in 2012 dollars)
+    - Restrict the sample to individuals who are not missing marital status, birth year, or gender
+    - Remove small firms with low value added or revenue
 
