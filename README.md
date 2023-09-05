@@ -38,6 +38,9 @@ Since the CEEDD data is not available for public use, I provide simulated data t
 
 
 ## Overview of the code
+#### 0_simulate_data.R
+ - Creates simulated data. The structure of the simulated data matches the CEEDD. I create several different files that are later merged/cleaned before estimating the model. 
 
-### 1_prepare_data.R 
+#### 1_prepare_data.R 
+- 
 
