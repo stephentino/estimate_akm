@@ -2,9 +2,9 @@
 
 ## About the repository
 
-This code can be used to estimate a two-way fixed effects model using Canadian matched employer-employee data. Simulated data to test the code is provided, since the Canadian matched employer-employee data is not available to the public. 
+These programs can be used to estimate a two-way fixed effects model using Canadian matched employer-employee data. Simulated data to test the code is provided, since the Canadian matched employer-employee data is not available to the public. 
 
-I wrote this code while conducting research on monopsony power in Canada for my PhD thesis in economics at the University of Toronto.
+I wrote these programs while conducting research on monopsony power in Canada for my PhD thesis in economics at the University of Toronto.
 
 ## Background information
 
@@ -15,6 +15,8 @@ Two-way fixed effects models are often called 'AKM' models thanks to the influen
 $y_{ijt} = \alpha_i + \psi_j + \beta'X_{it} + \varepsilon_{ijt},$
 
 where $\alpha_i$ is the person effect for individual $i$, $\psi_j$ is the firm effect for firm $j$, $X_{it}$ is a vector of time-varying characteristics for individual $i$ at time $t,$ $\beta$ is a conformable vector of coefficients, and $\varepsilon_{ijt}$ is the residual.
+
+
 
 ### Data
 
