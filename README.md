@@ -26,7 +26,7 @@ where $\alpha_i$ is the person effect for individual $i$, $\psi_j$ is the firm e
 
 ### Identification
 
-The firm effects are identified for firms that are "connected". Two firms are "connected" if there exists a worker who moves between them. Thus, an important step prior to estimating the AKM-style model is extracted the "largest connected set" of workers and firms. 
+The firm effects are identified for firms that are "connected". Two firms are "connected" if there exists a worker who moves between them. Thus, an important step prior to estimating the AKM-style model involves extracting the "largest connected set" of workers and firms from the matched employer-employee data. 
 
 For the estimator of the firm effects to be unbiased, firm-to-firm mobility must be uncorrelated with time-varying unobservables. 
 
