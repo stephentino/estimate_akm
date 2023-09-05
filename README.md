@@ -42,5 +42,6 @@ Since the CEEDD data is not available for public use, I provide simulated data t
  - Creates simulated data. I simulate worker level data, job level data, and firm level data, following the structure of the CEEDD.
 
 #### 1_prepare_data.R 
-- Cleans and merges the different datasets to create the matched employer-employee dataset used to estimate the AKM model. 
+- Cleans and merges the different datasets to create the matched employer-employee dataset used to estimate the AKM model. I apply the same filters to the simulated data that were originally applied to the CEEDD:
+-- 
 
