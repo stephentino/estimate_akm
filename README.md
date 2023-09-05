@@ -30,10 +30,14 @@ The code was originally used with Canadian matched employer-employee data, calle
 - the T4 Record of Employment (T4ROE), which contains job-level data (e.g. earnings, industry, start/end date, ...)
 - the National Accounts Longitudinal Microdata File (NALMF), which contains firm-level data (e.g. revenue, value added, ...)
 
-The CEEDD contains info on the *universe* of individuals, firms, and jobs in Canada from 2001 to 2020, meaning that it is a very large dataset.
+The CEEDD contains info on the *universe* of individuals, firms, and jobs in Canada from 2001 to 2020.
 
-Since the CEEDD data is not available for public use, I provide simulated data to run the code in this repository.
+Since the CEEDD data is not available for public use, I provide simulated data to run the code in this repository. The simulated data matches the structure of the CEEDD, but other than that, the data is entirely fabricated and is not related to the CEEDD in any way.
 
-### Simulated data
 
 ## Overview of the code
+
+### Challenges
+
+It is challenging to estimate an AKM-style model with the CEEDD because the CEEDD is a very large dataset. 
+
