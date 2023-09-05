@@ -4,8 +4,6 @@
 
 These programs can be used to estimate an AKM-style two-way fixed effects model using Canadian matched employer-employee data. Simulated data to test the code is provided, since the Canadian matched employer-employee data is not available to the public. 
 
-I wrote these programs while conducting research on monopsony power in Canada for my PhD thesis in economics at the University of Toronto.
-
 ## Background information
 
 ### AKM models
