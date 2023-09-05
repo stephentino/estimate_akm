@@ -22,7 +22,7 @@ The firm effects are identified for firms that are "connected". Two firms are "c
 
 To estimate the AKM model, I use the largest connected set of workers and firms in the data. 
 
-To control for age effects, I include a quartic polynomial in age in the vector of controls $X_{it}$. However, since I also include year effects, the linear term of the polynomial is not identified (age is a linear function of year and birth year, and the person effects are colinear with birth year). 
+To control for age effects, I include a quartic polynomial in age in the vector of controls $X_{it}$. However, since I also include year effects, the linear term of the polynomial in age is not identified (age is a linear function of year and birth year, and the person effects are colinear with birth year). 
 
 ## Data
 
