@@ -39,8 +39,8 @@ Since the CEEDD data is not available for public use, I provide simulated data t
 
 ## Overview of the code
 #### 0_simulate_data.R
- - Creates simulated data. The original data (the CEEDD) consists of several linkable files. I create simulated data that matches this structure. The simulated data are saved as separate files and then cleaned and merged later.  
+ - Creates simulated data. I simulate worker level data, job level data, and firm level data, following the structure of the CEEDD.
 
 #### 1_prepare_data.R 
-- 
+- Cleans and merges the different datasets to create the matched employer-employee dataset used to estimate the AKM model. 
 
