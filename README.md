@@ -26,9 +26,7 @@ where $\alpha_i$ is the person effect for individual $i$, $\psi_j$ is the firm e
 
 ### Identification
 
-The firm effects are identified for firms that are "connected". Two firms are "connected" if there exists a worker who moves between them. In addition, for the estimator of the firm effects to be unbiased, firm-to-firm mobility must be uncorrelated with time-varying unobservables. 
-
-To estimate the AKM model, I use the largest connected set of workers and firms in the data. 
+The firm effects are identified for firms that are "connected". Two firms are "connected" if there exists a worker who moves between them. Thus, the model is estimated using the "largest connected set" of workers and firms (more details described below). In addition, for the estimator of the firm effects to be unbiased, firm-to-firm mobility must be uncorrelated with time-varying unobservables. 
 
 To control for age effects, I include a quartic polynomial in age in the vector of controls $X_{it}$. However, since I also include year effects in $X_{it}$, the linear term of the polynomial in age is not identified (age is a linear function of year and birth year, and the person effects are colinear with birth year). Therefore, I omit the linear term of the polynomial in age and apply a normalization to age, following the literature.  
 
