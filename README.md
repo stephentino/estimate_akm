@@ -48,7 +48,7 @@ Since the CEEDD data is not available for public use, I provide simulated data t
 
 ## Overview of the code
 #### 0_simulate_data.R
- - Creates simulated data. I simulate worker level data, job level data, and firm level data, following the structure of the CEEDD.
+ - Creates simulated data. I simulate worker level data, job level data, and firm level data, following the structure of the CEEDD. I also simulate a few extra files, such as information on individuals' immigrant status and a provincial CPI deflator.
 
 #### 1_prepare_data.R 
 - Cleans and merges the different datasets to create the matched employer-employee dataset used to estimate the AKM model. I apply the same filters to the simulated data that were originally applied to the CEEDD:
@@ -57,4 +57,5 @@ Since the CEEDD data is not available for public use, I provide simulated data t
     - Restrict the sample to individuals who are not missing marital status, birth year, or gender
     - Remove small firms with low value added or revenue
     - Restrict the sample of firms to those in the business sector only
+      
 
