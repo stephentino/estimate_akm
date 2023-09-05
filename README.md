@@ -14,8 +14,11 @@ Two-way fixed effects models estimated using matched employee-employer data are 
 
 $y_{ijt} = \alpha_i + \psi_j + \beta'X_{it} + \varepsilon_{ijt},$
 
-where $\alpha_i$ is the person effect for individual $i$, $\psi_j$ is the firm effect for firm $j$, $X_{it}$ is a vector of time-varying characteristics for individual $i$ at time $t,$ $\beta$ is a conformable vector of coefficients, and $\varepsilon_{ijt}$ is the residual.
+where $\alpha_i$ is the person effect for individual $i$, $\psi_j$ is the firm effect for firm $j$, $X_{it}$ is a vector of time-varying characteristics for individual $i$ at time $t,$ $\beta$ is a conformable vector of coefficients, and $\varepsilon_{ijt}$ is the residual. Included in the vector $X_{it}$ are variables for marital status, province of residence, year effects, and controls for age (more details below).
 
+### Identification
+
+Identification of the person and firm effects requires restricting the sample to the .
 
 
 ### Data
