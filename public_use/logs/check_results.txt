@@ -1,0 +1,24 @@
+
+#---------------------#
+start date/time
+[1] "Thu Sep  7 11:05:14 2023"
+
+#---------------------#
+
+
+loading data:
+[1] "/Users/Stephen/Dropbox/40. github/estimate_akm/public_use/data/akm_data.rds"
+
+
+
+
+loading data:
+[1] "/Users/Stephen/Dropbox/40. github/estimate_akm/public_use/data/fe_data.rds"
+
+
+
+#---------------------#
+end date/time
+[1] "Thu Sep  7 11:05:25 2023"
+
+#---------------------#

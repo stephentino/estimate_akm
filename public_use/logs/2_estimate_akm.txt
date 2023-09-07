@@ -1,0 +1,129 @@
+
+#---------------------#
+start date/time
+[1] "Thu Sep  7 11:03:28 2023"
+
+#---------------------#
+
+
+loading data:
+[1] "/Users/Stephen/Dropbox/40. github/estimate_akm/public_use/data/job_data.rds"
+
+
+
+
+any firms missing connected status do not employ movers. fraction of the sample:
+
+fraction of worker-firms in the connected set:
+[1] 1
+
+
+
+beginning estimation of FE model....
+
+
+estimation of FE model complete. Results:
+
+Call:
+   felm(formula = log_earnings ~ age_sq + year | person_id + firm_id,      data = main_data) 
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-4.6995 -0.6568 -0.0012  0.6565  4.7693 
+
+Coefficients:
+           Estimate Std. Error t value Pr(>|t|)    
+age_sq   -1.979e-03  1.149e-05 -172.22   <2e-16 ***
+year2002 -2.200e+00  4.533e-03 -485.41   <2e-16 ***
+year2003 -1.963e-01  4.716e-03  -41.62   <2e-16 ***
+year2004 -6.189e-01  5.019e-03 -123.31   <2e-16 ***
+year2005 -2.264e+00  5.431e-03 -416.87   <2e-16 ***
+year2006 -4.067e-01  5.940e-03  -68.46   <2e-16 ***
+year2007 -1.580e+00  6.531e-03 -241.85   <2e-16 ***
+year2008 -4.813e+00  7.193e-03 -669.14   <2e-16 ***
+year2009 -3.219e-01  7.915e-03  -40.68   <2e-16 ***
+year2010 -1.853e+00  8.689e-03 -213.25   <2e-16 ***
+year2011  1.855e+00  9.509e-03  195.03   <2e-16 ***
+year2012 -2.819e+00  1.037e-02 -271.79   <2e-16 ***
+year2013 -1.070e+00  1.127e-02  -94.91   <2e-16 ***
+year2014 -2.853e+00  1.221e-02 -233.74   <2e-16 ***
+year2015 -1.754e-01  1.317e-02  -13.31   <2e-16 ***
+year2016 -3.781e+00  1.417e-02 -266.79   <2e-16 ***
+year2017 -2.008e-01  1.520e-02  -13.21   <2e-16 ***
+year2018 -3.784e+00  1.626e-02 -232.68   <2e-16 ***
+year2019 -3.763e+00  1.735e-02 -216.91   <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 1 on 1799553 degrees of freedom
+Multiple R-squared(full model): 0.9929   Adjusted R-squared: 0.9925 
+Multiple R-squared(proj model): 0.8284   Adjusted R-squared: 0.8189 
+F-statistic(full model): 2517 on 100438 and 1799553 DF, p-value: < 2.2e-16 
+F-statistic(proj model): 4.574e+05 on 19 and 1799553 DF, p-value: < 2.2e-16 
+
+
+
+
+
+Saving coefficients...
+
+
+
+exporting the data to the following path:
+[1] "/Users/Stephen/Dropbox/40. github/estimate_akm/public_use/data/est_coefs.rds"
+
+
+
+Coefficients saved.
+
+Extracting FEs....
+Extraction of FE complete. Saving FEs...
+
+
+
+exporting the data to the following path:
+[1] "/Users/Stephen/Dropbox/40. github/estimate_akm/public_use/data/est_fe_data.rds"
+
+
+
+FEs saved.
+
+FE data:
+Rows: 100,421
+Columns: 5
+$ effect <dbl> 0.2219817, -17.1194905, 7.9270917, 3.1542159, 14.3984661, 1.3557596, 7.8894990, -2.7250718, -2.7941958, 4.0589174…
+$ obs    <int> 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 1…
+$ comp   <dbl> 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,…
+$ fe     <fct> person_id, person_id, person_id, person_id, person_id, person_id, person_id, person_id, person_id, person_id, per…
+$ idx    <fct> 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31…
+
+ how many observations not missing worker or firm FEs:[1] 1
+
+data with earnings, fixed effects, and other covariates:
+Rows: 1,899,992
+Columns: 12
+$ firm_id       <chr> "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "…
+$ person_id     <chr> "10018", "1002", "1002", "1002", "1002", "1002", "10033", "10057", "10057", "10057", "10057", "10057", "10…
+$ year          <fct> 2019, 2002, 2003, 2004, 2005, 2006, 2004, 2015, 2016, 2017, 2018, 2019, 2003, 2004, 2005, 2006, 2007, 2008…
+$ age           <dbl> 41, 41, 42, 43, 44, 45, 43, 36, 37, 38, 39, 40, 39, 40, 41, 42, 43, 44, 45, 50, 51, 52, 28, 29, 30, 31, 32…
+$ age_sq        <dbl> 1681, 1681, 1764, 1849, 1936, 2025, 1849, 1296, 1369, 1444, 1521, 1600, 1521, 1600, 1681, 1764, 1849, 1936…
+$ log_earnings  <dbl> -17.629248, -34.161226, -30.784102, -32.676928, -31.785264, -31.182464, -17.998753, -15.130281, -18.904819…
+$ lag_firm_id   <dbl> 55, 109, 0, 0, 0, 0, 69, 157, 0, 0, 0, 0, 55, 0, 0, 0, 0, 0, 0, 148, 0, 0, 147, 0, 0, 0, 0, 0, 0, 0, 0, 0,…
+$ lag_person_id <int> 10018, 1002, 1002, 1002, 1002, 1002, 10033, 10057, 10057, 10057, 10057, 10057, 10063, 10063, 10063, 10063,…
+$ move          <int> 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, NA, 0, 0, 0, 0, 0, 0, 0, 0, 0, NA, 0, 0,…
+$ connected     <int> 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1…
+$ worker_fe     <dbl> 1.6619191, -14.5709255, -14.5709255, -14.5709255, -14.5709255, -14.5709255, -0.6432452, -0.6757311, -0.675…
+$ firm_fe       <dbl> -12.43949, -12.43949, -12.43949, -12.43949, -12.43949, -12.43949, -12.43949, -12.43949, -12.43949, -12.439…
+
+
+
+exporting the data to the following path:
+[1] "/Users/Stephen/Dropbox/40. github/estimate_akm/public_use/data/akm_data.rds"
+
+
+
+#---------------------#
+end date/time
+[1] "Thu Sep  7 11:04:30 2023"
+
+#---------------------#

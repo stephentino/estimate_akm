@@ -1,0 +1,8 @@
+statistic,value
+var(y),133.985649058299
+var(worker_fe),100.096909935889
+var(firm_fe),27.5900274474515
+"2*cov(worker_fe,firm_fe)",-0.0445337180051924
+share_worker,0.747071874035817
+share_firm,0.205917780309791
+share_2cov,-0.000332376775559113
