@@ -1,4 +1,4 @@
-# Estimating a two-way fixed effect models using Canadian matched employer-employee data
+# Estimating a two-way fixed effect model using Canadian matched employer-employee data
 
 ## About the repository
 
