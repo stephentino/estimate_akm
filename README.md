@@ -2,7 +2,7 @@
 
 ## About the repository
 
-The purpose of this project is to estimate an AKM-style two-way fixed effects model using Canadian matched employer-employee data. Simulated data and some public use programs are provided, since the Canadian matched employer-employee data is not available to the public. These public use programs may be useful to researchers estimating AKM-style models in a variety of contexts. The original code to estimate the AKM-style model with the restricted-access Canadian data are also provided and may be of use to researchers working with the Canadian data.  
+The purpose of this project is to estimate an AKM-style two-way fixed effects model using Canadian matched employer-employee data. Simulated data and some public use programs are provided, since the Canadian matched employer-employee data is not available to the public. These public use programs may be useful to researchers estimating AKM-style models in a variety of contexts. The original code to estimate the AKM-style model with the restricted-access Canadian data are also provided.
 
 Contents:
 
@@ -10,7 +10,9 @@ Contents:
 
 [Data](#Data)
 
-[Overview of the code](#Overview-of-the-code)
+[Overview of the code: public use](#Overview-of-the-code)
+
+[Overview of the code: restricted access](#Overview-of-the-code)
 
 ## Background information
 
@@ -34,9 +36,6 @@ For the estimator of the firm effects to be unbiased, firm-to-firm mobility must
 
 To control for age effects, I include a quartic polynomial in age in the vector of controls $X_{it}$. However, since I also include year effects in $X_{it}$, the linear term of the polynomial in age is not identified (age is a linear function of year and birth year, and the person effects are colinear with birth year). Therefore, I omit the linear term of the polynomial in age and apply a normalization to age, following the literature.  
 
-### Challenges
-
-
 
 ## Data
 
@@ -53,10 +52,13 @@ Since the CEEDD data is not available for public use, I provide simulated data t
 
 
 ## Overview of the code
-#### 0_simulate_data.R
+
+### Public use
+
+#### estimate_akm/public_use/0_simulate_data.R
  - Creates simulated data. I simulate worker level data, job level data, and firm level data, following the structure of the CEEDD. I also simulate a few extra files, such as information on individuals' immigrant status and a provincial CPI deflator.
 
-#### 1_prepare_data.R 
+#### estimate_akm/public_use/1_prepare_data.R 
 - Cleans and merges the different datasets to create the matched employer-employee dataset used to estimate the AKM model. I apply the same filters to the simulated data that were originally applied to the CEEDD:
     - Restrict the sample of jobs to "primary jobs" only, which are those that pay each individual the most in each year
     - Restrict the sample of jobs that are "full-time equivalent", i.e. ,those that pay at least $18,377 (in 2012 dollars)
@@ -64,13 +66,13 @@ Since the CEEDD data is not available for public use, I provide simulated data t
     - Remove small firms with low value added or revenue
     - Restrict the sample of firms to those in the business sector only
 
-#### 2_estimate_akm.R
+#### estimate_akm/public_use/2_estimate_akm.R
 - First, this code applies some additional filters to the data that are required before akm estimation:
     - Restricts the sample to workers and firms observed at least twice
     - Restricts the sample to the largest connected set of workers and firms. Note: the firms and workers in the matched employer-employee data form a "graph" where the nodes are firms and the edges are workers' firm-to-firm transitions. The "largest connected set" of workers and firms is the maximal connected subgraph. The maximal connected subgraph is extracted using the *igraph* package.
     - Normalizes "age" using the age associated with the highest "residualized earnings", where the "residualized earnings" are calculated from a regression of log earnings on time-varying individual covariates and year effects.  
 - Next, the code estimates the AKM-style two-way fixed effects model using the final sample of workers and firms. All of the coefficients and fixed effects are estimated jointly (in contrast to the "two-step procedure" that is discussed below.) To estimate the model, the *lfe* package is used.
 
-#### 3_estimate_two_step_akm.R 
+#### estimate_akm/public_use/3_estimate_two_step_akm.R 
 - This code applies some additional filters to the data and then estimates the AKM-style model, similar to *2_estimate_akm.R*. However, the estimation of the model is done in "two steps". In the first step, log earnings are regressed on time-varying individual characteristics and year effects. In the second step, the two-way fixed effects model is estimated using the residualized earnings. This "two-step" procedure produces nearly identical results to the one-step procedure, an the computational run time is significantly reduced.  
 
