@@ -49,7 +49,7 @@ The code was originally used with Canadian matched employer-employee data, calle
 
 The CEEDD contains info on the universe of individuals, firms, and jobs in Canada from 2001 to 2020.
 
-Since the CEEDD data is not available for public use, I provide simulated data that is entirely fabricated and is not related to the true Canadian data in any way. This simulated data can be used to test the programs in the "*estimate_akm/public_use*" folder. The programs in the "*estimate_akm/public_use*" folder are a simplified version of the original code.  
+Since the CEEDD data is not available for public use, I provide simulated data that is entirely fabricated and is not related to the true Canadian data in any way. This simulated data can be used to test the programs in the "*estimate_akm/public_use*" folder. The programs in the "*estimate_akm/public_use*" folder are a simplified version of the original code (see below).
 
 ## Overview of the code
 
@@ -63,12 +63,12 @@ Since the CEEDD data is not available for public use, I provide simulated data t
 #### estimate_akm/public_use/code/2_estimate_akm.R
 - First, this code applies some additional filters to the data that are required before akm estimation:
     - Restricts the sample to workers and firms observed at least twice
-    - Restricts the sample to the largest connected set of workers and firms. Note: the firms and workers in the matched employer-employee data form a "graph" where the nodes are firms and the edges are workers' firm-to-firm transitions. The "largest connected set" of workers and firms is the maximal connected subgraph. The maximal connected subgraph is extracted using the *igraph* package.
-    - Normalizes "age" using the age associated with the highest "residualized earnings", where the "residualized earnings" are calculated from a regression of log earnings on time-varying individual covariates and year effects.  
+    - Restricts the sample to the largest connected set of workers and firms. Note: the firms and workers in the matched employer-employee data form a "graph" where the nodes are firms and the edges are workers' firm-to-firm transitions. The "largest connected set" of workers and firms is the maximal connected subgraph. The maximal connected subgraph is extracted using the *igraph* package.  
 - Next, the code estimates the AKM-style two-way fixed effects model using the final sample of workers and firms. All of the coefficients and fixed effects are estimated jointly (in contrast to the "two-step procedure" that is discussed below.) To estimate the model, the *lfe* package is used.
+- Finally, a variance decomposition is conducted. This variance decomposition shows the fraction of the variance in log earnings that is attributable to person effects, firm effects, and the covariance between the two. 
 
 #### estimate_akm/public_use/code/3_estimate_two_step_akm.R 
-- This code applies some additional filters to the data and then estimates the AKM-style model, similar to *2_estimate_akm.R*. However, the estimation of the model is done in "two steps". In the first step, log earnings are regressed on time-varying individual characteristics and year effects. In the second step, the two-way fixed effects model is estimated using the residualized earnings. This "two-step" procedure produces nearly identical results to the one-step procedure, an the computational run time is significantly reduced.  
+- This code is similar to *2_estimate_akm.R*. However, the estimation of the model is done in "two steps". In the first step, log earnings are regressed on time-varying individual characteristics and year effects. In the second step, the two-way fixed effects model is estimated using the residualized earnings. This "two-step" procedure produces nearly identical results to the one-step procedure, an the computational run time is significantly reduced. When working with real matched employer-employee datasets that require a lot of memory, the two-step procedure is preferred.   
 
 ### Restricted access
 
