@@ -2,7 +2,7 @@
 
 ## About the repository
 
-The purpose of this project is to estimate an AKM-style two-way fixed effects model using Canadian matched employer-employee data. Simulated data and some public use code are provided, since the Canadian matched employer-employee data is not available to the public. The original code to estimate the AKM-style model with the restricted-access data are also provided. 
+The purpose of this project is to estimate an AKM-style two-way fixed effects model using Canadian matched employer-employee data. Simulated data and some public use code are provided, since the Canadian matched employer-employee data is not available to the public. The original code to estimate the AKM-style model with the restricted-access data are also provided for reference. 
 
 Contents:
 
