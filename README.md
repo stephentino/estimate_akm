@@ -6,7 +6,7 @@ The purpose of this project is to estimate an AKM-style two-way fixed effects mo
 
 **Contents:**
 
-- [Background](#Background-information)
+- [Background information](#Background-information)
 
 - [Data](#Data)
 
@@ -46,33 +46,35 @@ The code was originally used with Canadian matched employer-employee data, calle
 - the T4 Record of Employment (T4ROE), which contains job-level data (e.g. earnings, industry, start/end date, ...)
 - the National Accounts Longitudinal Microdata File (NALMF), which contains firm-level data (e.g. revenue, value added, ...)
 
-The CEEDD contains info on the *universe* of individuals, firms, and jobs in Canada from 2001 to 2020.
+The CEEDD contains info on the universe of individuals, firms, and jobs in Canada from 2001 to 2020.
 
-Since the CEEDD data is not available for public use, I provide simulated data to run the code in this repository. The simulated data matches the structure of the CEEDD (i.e., similar variable names etc.), but other than that, the data is entirely fabricated and is not related to the true Canadian data in any way.
-
+Since the CEEDD data is not available for public use, I provide simulated data that is entirely fabricated and is not related to the true Canadian data in any way. This simulated data can be used to test the programs in the "*estimate_akm/public_use*" folder. The programs in the "*estimate_akm/public_use*" folder are a simplified version of the original code.  
 
 ## Overview of the code
 
 ### Public use
 
-#### estimate_akm/public_use/0_simulate_data.R
- - Creates simulated data. I simulate worker level data, job level data, and firm level data, following the structure of the CEEDD. I also simulate a few extra files, such as information on individuals' immigrant status and a provincial CPI deflator.
+#### estimate_akm/public_use/code/1_simulate_data.R
+ - Creates simulated data that can be used to test the programs. I simulate a matched employer-employee dataset that follows workers and firms over a period of 20 years. 
 
-#### estimate_akm/public_use/1_prepare_data.R 
-- Cleans and merges the different datasets to create the matched employer-employee dataset used to estimate the AKM model. I apply the same filters to the simulated data that were originally applied to the CEEDD:
-    - Restrict the sample of jobs to "primary jobs" only, which are those that pay each individual the most in each year
-    - Restrict the sample of jobs that are "full-time equivalent", i.e. ,those that pay at least $18,377 (in 2012 dollars)
-    - Restrict the sample to individuals who are not missing marital status, birth year, or gender
-    - Remove small firms with low value added or revenue
-    - Restrict the sample of firms to those in the business sector only
 
-#### estimate_akm/public_use/2_estimate_akm.R
+
+#### estimate_akm/public_use/code/2_estimate_akm.R
 - First, this code applies some additional filters to the data that are required before akm estimation:
     - Restricts the sample to workers and firms observed at least twice
     - Restricts the sample to the largest connected set of workers and firms. Note: the firms and workers in the matched employer-employee data form a "graph" where the nodes are firms and the edges are workers' firm-to-firm transitions. The "largest connected set" of workers and firms is the maximal connected subgraph. The maximal connected subgraph is extracted using the *igraph* package.
     - Normalizes "age" using the age associated with the highest "residualized earnings", where the "residualized earnings" are calculated from a regression of log earnings on time-varying individual covariates and year effects.  
 - Next, the code estimates the AKM-style two-way fixed effects model using the final sample of workers and firms. All of the coefficients and fixed effects are estimated jointly (in contrast to the "two-step procedure" that is discussed below.) To estimate the model, the *lfe* package is used.
 
-#### estimate_akm/public_use/3_estimate_two_step_akm.R 
+#### estimate_akm/public_use/code/3_estimate_two_step_akm.R 
 - This code applies some additional filters to the data and then estimates the AKM-style model, similar to *2_estimate_akm.R*. However, the estimation of the model is done in "two steps". In the first step, log earnings are regressed on time-varying individual characteristics and year effects. In the second step, the two-way fixed effects model is estimated using the residualized earnings. This "two-step" procedure produces nearly identical results to the one-step procedure, an the computational run time is significantly reduced.  
 
+### Restricted access
+
+#### estimate_akm/original/code/ 
+- Cleans and merges the different datasets to create the matched employer-employee dataset used to estimate the AKM model. I apply the following filters to the CEEDD to produce the final dataset used in the estimation:
+    - Restrict the sample of jobs to "primary jobs" only, which are those that pay each individual the most in each year
+    - Restrict the sample of jobs that are "full-time equivalent", i.e. ,those that pay at least $18,377 (in 2012 dollars)
+    - Restrict the sample to individuals who are not missing marital status, birth year, or gender
+    - Remove small firms with low value added or revenue
+    - Restrict the sample of firms to those in the business sector only
