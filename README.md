@@ -79,3 +79,6 @@ Since the CEEDD data is not available for public use, I provide simulated data t
     - Restrict the sample to individuals who are not missing marital status, birth year, or gender
     - Remove small firms with low value added or revenue
     - Restrict the sample of firms to those in the business sector only
+
+# Author
+Stephen Tino, PhD Candidate in the Economics Department at the University of Toronto, s.tino@mail.utoronto.ca
