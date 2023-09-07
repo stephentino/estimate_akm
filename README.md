@@ -6,13 +6,13 @@ The purpose of this project is to estimate an AKM-style two-way fixed effects mo
 
 **Contents:**
 
-[Background](#Background-information)
+- [Background](#Background-information)
 
-[Data](#Data)
+- [Data](#Data)
 
-[Overview of the code: public use](#Overview-of-the-code)
+- [Overview of the code: public use](#Overview-of-the-code)
 
-[Overview of the code: restricted access](#Overview-of-the-code)
+- [Overview of the code: restricted access](#Overview-of-the-code)
 
 ## Background information
 
