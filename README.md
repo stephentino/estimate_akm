@@ -81,4 +81,4 @@ Since the CEEDD data is not available for public use, I provide simulated data t
     - Restrict the sample of firms to those in the business sector only
 
 # Author
-Stephen Tino, PhD Candidate in the Economics Department at the University of Toronto, s.tino@mail.utoronto.ca
+Stephen Tino, PhD Candidate in Economics, University of Toronto, s.tino@mail.utoronto.ca
