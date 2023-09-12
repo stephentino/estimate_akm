@@ -36,13 +36,13 @@ To control for age effects, I include a quartic polynomial in age in the vector 
 
 For the estimator of the firm effects to be unbiased, firm-to-firm mobility must be uncorrelated with time-varying unobservables. This is an untestable assumption, although some evidence in support of this assumption can be found in the literature.
 
-Another implicit assumption of the AKM-style model is that the worker and firm effects are additively separable. Other methods, such as the BLM method by [(Bonhomme, Lamadon, and Manresa, 2019)](https://doi.org/10.3982/ECTA15722) should be used if there are reasons to believe that the assumption of additive separability does not hold.
+Another implicit assumption of the AKM-style model is that the worker and firm effects are additively separable. Other methods, such as the BLM method [(Bonhomme, Lamadon, and Manresa, 2019)](https://doi.org/10.3982/ECTA15722) should be used if there are reasons to believe that the assumption of additive separability does not hold.
 
 ## Data
 
 ### The Canadian Employer-Employee Database (CEEDD)
 
-The code was originally used with Canadian matched employer-employee data, called the Canadian Employer-Employee Dynamics Database (CEEDD). The underlying linkable files of the CEEDD are derived from administrative data sources maintained by Statistics Canada. Several key components of the CEEDD are:
+The code was originally used with Canadian matched employer-employee data, called the [Canadian Employer-Employee Dynamics Database (CEEDD)](https://www.statcan.gc.ca/en/statistical-programs/document/5228_D1_V1). The underlying linkable files of the CEEDD are derived from administrative data sources maintained by Statistics Canada. Several key components of the CEEDD are:
 - the T1 Personal Master File (T1PMF), which contains individual-level data (e.g. gender, age, marital status, ...) 
 - the T4 Record of Employment (T4ROE), which contains job-level data (e.g. earnings, industry, start/end date, ...)
 - the National Accounts Longitudinal Microdata File (NALMF), which contains firm-level data (e.g. revenue, value added, ...)
