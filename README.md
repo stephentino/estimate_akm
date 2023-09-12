@@ -41,9 +41,13 @@ To control for age effects, I include a quartic polynomial in age in the vector 
 
 For the estimator of the firm effects to be unbiased, firm-to-firm mobility must be uncorrelated with time-varying unobservables. This is often referred to as the "exogenous mobility assumption" (see, for example, [Card et al., 2018](https://doi.org/10.1086/694153). This is an untestable assumption, although some evidence in support of this assumption can be found in the literature. For example, [Card et al. (2013)](https://doi.org/10.1093/qje/qjt006) show that wage gains and losses from a firm-to-firm transition are typically symmetric, and that earnings growth tends to be relatively flat before and after a job move. 
 
-Another implicit assumption of the AKM-style model is that the worker and firm effects are additively separable. Other methods, such as the BLM method [(Bonhomme, Lamadon, and Manresa, 2019)](https://doi.org/10.3982/ECTA15722) should be used if there are reasons to believe that the assumption of additive separability does not hold.
+[Bonhomme et al. (2023)](https://doi.org/10.1086/720009) explain that firm effects will be biased upward, and the covariance between worker effects and firm effects will be biased downward, if there are many firms in the data that are "weakly connected" by a relatively small number of workers moving between them. This is referred to as "limited mobility bias", and it can be substantial in practice. In this project, I do not correct for limited mobility bias. I will add code that corrects for limited mobility bias in the future. 
 
 The fixed effects are high-dimensional, since there are many firms and individuals in the typical matched employer-employee dataset. This makes AKM-style models difficult to estimate in practice. To overcome this challenge, I use the *lfe* package in *R* to estimate the model with high-dimensional fixed effects. 
+
+An assumption of the AKM-style model is that the worker and firm effects are additively separable. Other methods, such as the BLM method [(Bonhomme, Lamadon, and Manresa, 2019)](https://doi.org/10.3982/ECTA15722) should be used if there are reasons to believe that the assumption of additive separability does not hold.
+
+
 
 ## Data
 
