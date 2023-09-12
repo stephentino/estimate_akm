@@ -17,9 +17,6 @@
 
 # modified cat and print functions for making comments in log files -------
 
-nprint <- function(...) {
-  print(paste0("\n\n",...,"\n\n"))
-}
 
 
 ncat <- function(...) {
