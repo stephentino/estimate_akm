@@ -85,6 +85,16 @@ Since the CEEDD data is not available for public use, I provide simulated data t
 - A subset of jobs in the ROE file in the CEEDD are associated with start/end dates for the job spell. However, the start/end dates are only non-missing in the data in the year that the worker separates from the employer. This code "fills out" the start/end dates so that each "job-year" in the data with start/end dates available is associated with the start/end date of the spell.
 
 #### estimate_akm/original/code/2_estimate_akm.R
+- First, this code applies some filters to the data that are required before akm estimation:
+    - Restricts the sample to workers and firms observed at least twice
+    - Restricts the sample to the largest connected set of workers and firms. Note: the firms and workers in the matched employer-employee data form a "graph" where the nodes are firms and the edges are workers' firm-to-firm transitions. The "largest connected set" of workers and firms is the maximal connected subgraph. The maximal connected subgraph is extracted using the *igraph* package.  
+- Next, the code estimates the AKM-style two-way fixed effects model using the final sample of workers and firms. All of the coefficients and fixed effects are estimated jointly (in contrast to the "two-step procedure" that is discussed below.) To estimate the model, the *lfe* package is used.
+- Finally, a variance decomposition is conducted. This variance decomposition shows the fraction of the variance in log earnings that is attributable to person effects, firm effects, and the covariance between the two. 
+
+#### estimate_akm/original/code/4_estimate_two_step_akm.R 
+- This code is similar to *2_estimate_akm.R*. However, the estimation of the model is done in "two steps". In the first step, log earnings are regressed on time-varying individual characteristics and year effects. In the second step, the two-way fixed effects model is estimated using the residualized earnings. This "two-step" procedure produces nearly identical results to the one-step procedure, an the computational run time is significantly reduced. When working with real matched employer-employee datasets that require a lot of memory, the two-step procedure is preferred.
+  
+#### estimate_akm/original/code/2_estimate_akm.R
 
 # Author
 Stephen Tino, PhD Candidate in Economics, University of Toronto, s.tino@mail.utoronto.ca
