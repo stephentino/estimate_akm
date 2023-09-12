@@ -18,7 +18,7 @@ The purpose of this project is to estimate an AKM-style two-way fixed effects mo
 
 ### AKM models
 
-The AKM model [(Abowd, Kramarz, and Margolis 1999)](https://doi.org/10.1111/1468-0262.00020) quantifies the contribution of workers and firms to earnings inequality. The model assumes that the log of an individual's earnings can be decomposed into a the sum of a person effect, a firm effect, a time-varying index of individual characteristics, and a residual. 
+The AKM model [(Abowd, Kramarz, and Margolis 1999)](https://doi.org/10.1111/1468-0262.00020) can be used to quantify the contribution of workers and firms to earnings inequality. The model assumes that the log of an individual's earnings can be decomposed into a the sum of a person effect, a firm effect, a time-varying index of individual characteristics, and a residual. 
 
 Formally, the AKM model posits that the log earnings of individual $i$ at firm $j$ at time $t$ can be written as:
 
@@ -26,17 +26,18 @@ $y_{ijt} = \alpha_i + \psi_j + \beta'X_{it} + \varepsilon_{ijt},$
 
 where $\alpha_i$ is the person effect for individual $i$, $\psi_j$ is the firm effect for firm $j$, $X_{it}$ is a vector of time-varying characteristics for individual $i$ at time $t,$ $\beta$ is a conformable vector of coefficients, and $\varepsilon_{ijt}$ is the residual. Included in the vector $X_{it}$ are variables for marital status, province of residence, year effects, and controls for age (more details below).
 
-The fixed effects are high-dimensional, since there are many firms and individuals in the typical matched employer-employee dataset. This makes AKM-style models difficult to estimate in practice. To overcome this challenge, I use the *lfe* package in *R* to estimate the model with high-dimensional fixed effects. 
 
 ### Identification
 
 The firm effects are not identified for all firms in the matched employer-employee data. They are only identified for firms that are "connected". Two firms are "connected" if there exists a worker who moves between them. Thus, an important step prior to estimating the AKM-style model involves extracting the "largest connected set" of workers and firms from the matched employer-employee data. To extract the largest connected set of workers and firms, I use the *igraph* package. The employer-employee data can be viewed as a graph where the firms are nodes and the edges are worker flows between firms. The largest connected set is equivalent to the maximal connected component of the worker-firm graph.
 
-To control for age effects, I include a quartic polynomial in age in the vector of controls $X_{it}$. However, since I also include year effects in $X_{it}$, the linear term of the polynomial in age is not identified (age is a linear function of year and birth year, and the person effects are colinear with birth year). Therefore, I omit the linear term of the polynomial in age and apply a normalization to age, following the literature.  
+To control for age effects, I include a quartic polynomial in age in the vector of controls $X_{it}$. However, since I also include year effects in $X_{it}$, the linear term of the polynomial in age is not identified (age is a linear function of year and birth year, and the person effects are colinear with birth year). Therefore, I omit the linear term of the polynomial in age and also normalize age by subtracting and dividing by the age at which the earnings profile is at a maximum in the sample used in the model estimation. This approach of omitting the linear term of the polynomial in age and normalizing age in this way follows [Card et al. (2018)](https://doi.org/10.1086/694153). 
 
 For the estimator of the firm effects to be unbiased, firm-to-firm mobility must be uncorrelated with time-varying unobservables. This is an untestable assumption, although some evidence in support of this assumption can be found in the literature.
 
 Another implicit assumption of the AKM-style model is that the worker and firm effects are additively separable. Other methods, such as the BLM method [(Bonhomme, Lamadon, and Manresa, 2019)](https://doi.org/10.3982/ECTA15722) should be used if there are reasons to believe that the assumption of additive separability does not hold.
+
+The fixed effects are high-dimensional, since there are many firms and individuals in the typical matched employer-employee dataset. This makes AKM-style models difficult to estimate in practice. To overcome this challenge, I use the *lfe* package in *R* to estimate the model with high-dimensional fixed effects. 
 
 ## Data
 
