@@ -73,12 +73,18 @@ Since the CEEDD data is not available for public use, I provide simulated data t
 ### Restricted access
 
 #### estimate_akm/original/code/1A_clean_merge.R 
-- Cleans and merges the different datasets to create the matched employer-employee dataset used to estimate the AKM model. The CEEDD is a linkable database with different files for individual, firm, and job level information. These different files need to be merged (using individual and firm ID's), and the data must also be cleaned, before estimating the AKM model. Due to limitations in computational power and memory, certain filters must be applied to the data to reduce the dataset size before merging the different files together. I apply the following filters to the CEEDD to produce the final dataset used in the estimation:
+- Cleans and merges the different datasets to create the matched employer-employee dataset used to estimate the AKM model. The CEEDD is a linkable database with different files for individual, firm, and job level information. These different files need to be merged (using individual and firm ID's), and the data must also be cleaned, before estimating the AKM model. Due to limitations in computational power and memory, certain filters must be applied to the data to reduce the dataset size before merging the different files together.
+- I apply the following filters to produce the final dataset used in the estimation:
     - Restrict the sample of jobs to "primary jobs" only, which are those that pay each individual the most in each year
     - Restrict the sample of jobs that are "full-time equivalent", i.e. ,those that pay at least $18,377 (in 2012 dollars)
     - Restrict the sample to individuals who are not missing marital status, birth year, or gender
     - Remove small firms with low value added or revenue
     - Restrict the sample of firms to those in the business sector only
+ 
+#### estimate_akm/original/code/1B_add_spells.R
+- A subset of jobs in the ROE file in the CEEDD are associated with start/end dates for the job spell. However, the start/end dates are only non-missing in the data in the year that the worker separates from the employer. This code "fills out" the start/end dates so that each "job-year" in the data with start/end dates available is associated with the start/end date of the spell.
+
+#### estimate_akm/original/code/2_estimate_akm.R
 
 # Author
 Stephen Tino, PhD Candidate in Economics, University of Toronto, s.tino@mail.utoronto.ca
