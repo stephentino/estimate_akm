@@ -36,7 +36,7 @@ To control for age effects, I include a quartic polynomial in age in the vector 
 
 For the estimator of the firm effects to be unbiased, firm-to-firm mobility must be uncorrelated with time-varying unobservables. This is an untestable assumption, although some evidence in support of this assumption can be found in the literature.
 
-Another implicit assumption of the AKM-style model is that the worker and firm effects are additively separable. Other methods, such as the method by Bonhomme, Lamadon, and Manresa (referred to as "BLM") should be used if there are reasons to believe that the assumption of additive separability does not hold.
+Another implicit assumption of the AKM-style model is that the worker and firm effects are additively separable. Other methods, such as the BLM method by [(Bonhomme, Lamadon, and Manresa, 2019)](https://doi.org/10.3982/ECTA15722) should be used if there are reasons to believe that the assumption of additive separability does not hold.
 
 ## Data
 
