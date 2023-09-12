@@ -83,7 +83,7 @@ Since the CEEDD data is not available for public use, I provide simulated data t
 #### estimate_akm/public_use/code/3_estimate_two_step_akm.R 
 - This code is similar to *2_estimate_akm.R*. However, the estimation of the model is done in "two steps". In the first step, log earnings are regressed on time-varying individual characteristics and year effects. In the second step, the two-way fixed effects model is estimated using the residualized earnings. This "two-step" procedure produces nearly identical results to the one-step procedure, an the computational run time is significantly reduced. When working with real matched employer-employee datasets that require a lot of memory, the two-step procedure is preferred.   
 
-### Restricted access
+### Original code (used with restricted access data)
 
 #### estimate_akm/original/code/1A_clean_merge.R 
 - Cleans and merges the different datasets to create the matched employer-employee dataset used to estimate the AKM model. The CEEDD is a linkable database with different files for individual, firm, and job level information. These different files need to be merged (using individual and firm ID's), and the data must also be cleaned, before estimating the AKM model. Due to limitations in computational power and memory, certain filters must be applied to the data to reduce the dataset size before merging the different files together.
