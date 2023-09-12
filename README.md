@@ -37,6 +37,8 @@ $+ 2Cov(\alpha_i, \psi_j) + 2Cov(\alpha_i, \beta'X_{it}) + 2 Cov(\psi_j, \beta'X
 
 The contribution of worker heterogenity is captured by $Var(\alpha_i)$, the contribution of firm heterogeneity is captured by $Var(\psi_j)$, and the contribution of worker sorting is captured by $2 Cov(\alpha_i, \psi_j)$. If high wage workers tend to work at high-paying firms, then $Cov(\alpha_i,\psi_j)$ will be high.
 
+An assumption of the AKM-style model is that the worker and firm effects are additively separable. Other methods, such as the BLM method [(Bonhomme, Lamadon, and Manresa, 2019)](https://doi.org/10.3982/ECTA15722) should be used if there are reasons to believe that the assumption of additive separability does not hold.
+
 
 ### Identification
 
@@ -47,11 +49,6 @@ To control for age effects, I include a quartic polynomial in age in the vector 
 For the estimator of the firm effects to be unbiased, firm-to-firm mobility must be uncorrelated with time-varying unobservables. This is often referred to as the "exogenous mobility assumption" (see, for example, [Card et al., 2018](https://doi.org/10.1086/694153). This is an untestable assumption, although some evidence in support of this assumption can be found in the literature. For example, [Card et al. (2013)](https://doi.org/10.1093/qje/qjt006) show that wage gains and losses from a firm-to-firm transition are typically symmetric, and that earnings growth tends to be relatively flat before and after a job move. 
 
 [Bonhomme et al. (2023)](https://doi.org/10.1086/720009) explain that firm effects will be biased upward, and the covariance between worker effects and firm effects will be biased downward, if there are many firms in the data that are "weakly connected" by a relatively small number of workers moving between them. This is referred to as "limited mobility bias", and it can be substantial in practice. In this project, I do not correct for limited mobility bias. I will add code that corrects for limited mobility bias in the future. 
-
-The fixed effects are high-dimensional, since there are many firms and individuals in the typical matched employer-employee dataset. This makes AKM-style models difficult to estimate in practice. To overcome this challenge, I use the *lfe* package in *R* to estimate the model with high-dimensional fixed effects. 
-
-An assumption of the AKM-style model is that the worker and firm effects are additively separable. Other methods, such as the BLM method [(Bonhomme, Lamadon, and Manresa, 2019)](https://doi.org/10.3982/ECTA15722) should be used if there are reasons to believe that the assumption of additive separability does not hold.
-
 
 
 ## Data
@@ -81,7 +78,7 @@ Since the CEEDD data is not available for public use, I provide simulated data t
     - Restricts the sample to workers and firms observed at least twice
     - Restricts the sample to the largest connected set of workers and firms. Note: the firms and workers in the matched employer-employee data form a "graph" where the nodes are firms and the edges are workers' firm-to-firm transitions. The "largest connected set" of workers and firms is the maximal connected subgraph. The maximal connected subgraph is extracted using the *igraph* package.  
 - Next, the code estimates the AKM-style two-way fixed effects model using the final sample of workers and firms. All of the coefficients and fixed effects are estimated jointly (in contrast to the "two-step procedure" that is discussed below.) To estimate the model, the *lfe* package is used.
-- Finally, a variance decomposition is conducted. This variance decomposition shows the fraction of the variance in log earnings that is attributable to person effects, firm effects, and the covariance between the two. 
+- Finally, a variance decomposition is conducted. This variance decomposition shows the fraction of the variance in log earnings that is attributable to person effects, firm effects, and the covariance between the two.
 
 #### estimate_akm/public_use/code/3_estimate_two_step_akm.R 
 - This code is similar to *2_estimate_akm.R*. However, the estimation of the model is done in "two steps". In the first step, log earnings are regressed on time-varying individual characteristics and year effects. In the second step, the two-way fixed effects model is estimated using the residualized earnings. This "two-step" procedure produces nearly identical results to the one-step procedure, an the computational run time is significantly reduced. When working with real matched employer-employee datasets that require a lot of memory, the two-step procedure is preferred.   
