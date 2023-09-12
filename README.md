@@ -28,9 +28,11 @@ where $\alpha_i$ is the person effect for individual $i$, $\psi_j$ is the firm e
 
 A common approach to understand the contribution of worker and firm heterogeneity to overall earnings inequality is to conduct the variance decomposition:
 
-$$ Var(y_{ijt}) = Var(\alpha_i) + Var(\psi_j) + Var(\beta'X_{it}) + Var(\varepsilon_{ijt})
+$Var(y_{ijt}) =$
 
- + 2Cov(\alpha_i, \psi_j) + 2Cov(\alpha_i, \beta'X_{it}) + 2 Cov(\psi_j, \beta'X_{it})$$
+$Var(\alpha_i) + Var(\psi_j) + Var(\beta'X_{it}) + Var(\varepsilon_{ijt})$
+
+$+ 2Cov(\alpha_i, \psi_j) + 2Cov(\alpha_i, \beta'X_{it}) + 2 Cov(\psi_j, \beta'X_{it})$
 
 
 The contribution of worker heterogenity is captured by $Var(\alpha_i)$, the contribution of firm heterogeneity is captured by $Var(\psi_j)$, and the contribution of worker sorting is captured by $2 Cov(\alpha_i, \psi_j)$. If high wage workers tend to work at high-paying firms, then $Cov(\alpha_i,\psi_j)$ will be high.
