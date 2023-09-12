@@ -72,8 +72,8 @@ Since the CEEDD data is not available for public use, I provide simulated data t
 
 ### Restricted access
 
-#### estimate_akm/original/code/ 
-- Cleans and merges the different datasets to create the matched employer-employee dataset used to estimate the AKM model. I apply the following filters to the CEEDD to produce the final dataset used in the estimation:
+#### estimate_akm/original/code/1A_clean_merge.R 
+- Cleans and merges the different datasets to create the matched employer-employee dataset used to estimate the AKM model. The CEEDD is a linkable database with different files for individual, firm, and job level information. These different files need to be linked, and the data must also be cleaned, before estimating the AKM model. Due to limitations in computational power and memory, certain filters must be applied to the data to reduce the dataset size before merging the different files together. I apply the following filters to the CEEDD to produce the final dataset used in the estimation:
     - Restrict the sample of jobs to "primary jobs" only, which are those that pay each individual the most in each year
     - Restrict the sample of jobs that are "full-time equivalent", i.e. ,those that pay at least $18,377 (in 2012 dollars)
     - Restrict the sample to individuals who are not missing marital status, birth year, or gender
