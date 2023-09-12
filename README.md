@@ -84,6 +84,9 @@ Since the CEEDD data is not available for public use, I provide simulated data t
 #### estimate_akm/original/code/1B_add_spells.R
 - A subset of jobs in the ROE file in the CEEDD are associated with start/end dates for the job spell. However, the start/end dates are only non-missing in the data in the year that the worker separates from the employer. This code "fills out" the start/end dates so that each "job-year" in the data with start/end dates available is associated with the start/end date of the spell.
 
+#### estimate_akm/original/code/2_compare_different_models.R
+- This code tests that the *lfe package* estimates fixed effects models correctly using a subset of the full matched employer-employee data. I checked, for example, that the variance decomposition is nearly identical whether fixed effects are "partialled out" or not. I also checked that the "two step" procedure for estimating AKM produces nearly identical results as the "one step" procedure (see the discussion above). 
+
 #### estimate_akm/original/code/3_estimate_two_step_akm.R
 - First, this code applies some filters to the data that are required before akm estimation:
     - Restricts the sample to workers and firms observed at least twice
@@ -92,7 +95,7 @@ Since the CEEDD data is not available for public use, I provide simulated data t
 - Finally, a variance decomposition is conducted. This variance decomposition shows the fraction of the variance in log earnings that is attributable to person effects, firm effects, and the covariance between the two. 
 
 
-#### estimate_akm/original/code/2_estimate_akm.R
+
 
 # Author
 Stephen Tino, PhD Candidate in Economics, University of Toronto, s.tino@mail.utoronto.ca
