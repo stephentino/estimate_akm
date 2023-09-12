@@ -71,8 +71,6 @@ Since the CEEDD data is not available for public use, I provide simulated data t
 #### estimate_akm/public_use/code/1_simulate_data.R
  - Creates simulated data that can be used to test the programs. I simulate a matched employer-employee dataset that follows workers and firms over a period of 20 years. 
 
-
-
 #### estimate_akm/public_use/code/2_estimate_akm.R
 - First, this code applies some filters to the data that are required before akm estimation:
     - Restricts the sample to workers and firms observed at least twice
@@ -81,7 +79,11 @@ Since the CEEDD data is not available for public use, I provide simulated data t
 - Finally, a variance decomposition is conducted. This variance decomposition shows the fraction of the variance in log earnings that is attributable to person effects, firm effects, and the covariance between the two.
 
 #### estimate_akm/public_use/code/3_estimate_two_step_akm.R 
-- This code is similar to *2_estimate_akm.R*. However, the estimation of the model is done in "two steps". In the first step, log earnings are regressed on time-varying individual characteristics and year effects. In the second step, the two-way fixed effects model is estimated using the residualized earnings. This "two-step" procedure produces nearly identical results to the one-step procedure, an the computational run time is significantly reduced. When working with real matched employer-employee datasets that require a lot of memory, the two-step procedure is preferred.   
+- This code is similar to *2_estimate_akm.R*. However, the estimation of the model is done in "two steps". In the first step, log earnings are regressed on time-varying individual characteristics and year effects. In the second step, the two-way fixed effects model is estimated using the residualized earnings. This "two-step" procedure produces nearly identical results to the one-step procedure, an the computational run time is significantly reduced. When working with real matched employer-employee datasets that require a lot of memory, the two-step procedure is preferred.
+
+#### estimate_akm/public_use/code/utils
+
+- This folder contains R scripts with important functions that are used by the main scripts described above. 
 
 ### Original code (used with restricted access data)
 
@@ -108,7 +110,9 @@ Since the CEEDD data is not available for public use, I provide simulated data t
 - For my project, I needed to estimate the AKM model many times using different subsets of the data. For example, I estimate the model once using the full sample, once using data from 2001 to 2005 only, once using data from 2010 to 2015 only, etc. The code contains "switches" to decide which subset of the data is used to estimate the AKM model. 
 - Finally, a variance decomposition is conducted. This variance decomposition shows the fraction of the variance in log earnings that is attributable to person effects, firm effects, and the covariance between the two. 
 
+#### estimate_akm/original/code/utils
 
+- This folder contains R scripts with important functions that are used by the main scripts described above. 
 
 
 # Author
