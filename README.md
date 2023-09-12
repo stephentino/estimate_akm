@@ -18,15 +18,13 @@ The purpose of this project is to estimate an AKM-style two-way fixed effects mo
 
 ### AKM models
 
-The AKM model [(Abowd, Kramarz, and Margolis 1999)](https://doi.org/10.1111/1468-0262.00020) was developed to quantify the contribution of workers and firms to earnings inequality. The model assumes that the log of an individual's earnings can be decomposed into a the sum of a person effect, a firm effect, a time-varying index of individual characteristics, and a residual. 
+The AKM model [(Abowd, Kramarz, and Margolis 1999)](https://doi.org/10.1111/1468-0262.00020) quantifies the contribution of workers and firms to earnings inequality. The model assumes that the log of an individual's earnings can be decomposed into a the sum of a person effect, a firm effect, a time-varying index of individual characteristics, and a residual. 
 
 Formally, the AKM model posits that the log earnings of individual $i$ at firm $j$ at time $t$ can be written as:
 
 $y_{ijt} = \alpha_i + \psi_j + \beta'X_{it} + \varepsilon_{ijt},$
 
 where $\alpha_i$ is the person effect for individual $i$, $\psi_j$ is the firm effect for firm $j$, $X_{it}$ is a vector of time-varying characteristics for individual $i$ at time $t,$ $\beta$ is a conformable vector of coefficients, and $\varepsilon_{ijt}$ is the residual. Included in the vector $X_{it}$ are variables for marital status, province of residence, year effects, and controls for age (more details below).
-
-AKM models have been used to quantify the contribution of worker heterogeneity, firm heterogeneity, and worker sorting to firms to overall earnings inequality. 
 
 The fixed effects are high-dimensional, since there are many firms and individuals in the typical matched employer-employee dataset. This makes AKM-style models difficult to estimate in practice. To overcome this challenge, I use the *lfe* package in *R* to estimate the model with high-dimensional fixed effects. 
 
