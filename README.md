@@ -68,7 +68,7 @@ Since the CEEDD data is not available for public use, I provide simulated data t
 
 ### Public use code in [estimate_akm/public_use/code](https://github.com/stephentino/estimate_akm/blob/main/public_use/code/)
 
-#### 1_simulate_data.R](https://github.com/stephentino/estimate_akm/blob/main/public_use/code/1_simulate_data.R)
+#### [1_simulate_data.R](https://github.com/stephentino/estimate_akm/blob/main/public_use/code/1_simulate_data.R)
  - Creates simulated data that can be used to test the programs. I simulate a matched employer-employee dataset that follows workers and firms over a period of 20 years. 
 
 #### [2_estimate_akm.R](https://github.com/stephentino/estimate_akm/blob/main/public_use/code/2_estimate_akm.R)
