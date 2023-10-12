@@ -81,7 +81,7 @@ Since the CEEDD data is not available for public use, I provide simulated data t
 #### [3_estimate_two_step_akm.R](https://github.com/stephentino/estimate_akm/blob/main/public_use/code/3_estimate_two_step_akm.R)
 - This code is similar to *2_estimate_akm.R*. However, the estimation of the model is done in "two steps". In the first step, log earnings are regressed on time-varying individual characteristics and year effects. In the second step, the two-way fixed effects model is estimated using the residualized earnings. This "two-step" procedure produces nearly identical results to the one-step procedure, an the computational run time is significantly reduced. When working with real matched employer-employee datasets that require a lot of memory, the two-step procedure is preferred.
 
-#### [estimate_akm/public_use/code/utils](https://github.com/stephentino/estimate_akm/tree/main/public_use/code/utils)
+#### [utils](https://github.com/stephentino/estimate_akm/tree/main/public_use/code/utils)
 
 - This folder contains R scripts with important functions that are used by the main scripts described above. 
 
@@ -102,7 +102,7 @@ Since the CEEDD data is not available for public use, I provide simulated data t
 #### [2_compare_different_models.R](https://github.com/stephentino/estimate_akm/blob/main/original/2_compare_different_models.R)
 - This code tests that the *lfe package* estimates fixed effects models correctly using a subset of the full matched employer-employee data. I checked, for example, that the variance decomposition is nearly identical whether fixed effects are "partialled out" or not. I also checked that the "two step" procedure for estimating AKM produces nearly identical results as the "one step" procedure (see the discussion above). 
 
-#### [estimate_akm/original/code/3_estimate_two_step_akm.R](https://github.com/stephentino/estimate_akm/blob/main/original/2_compare_different_models.R)
+#### [3_estimate_two_step_akm.R](https://github.com/stephentino/estimate_akm/blob/main/original/3_estimate_two_step_akm.R)
 - First, this code applies some filters to the data that are required before akm estimation:
     - Restricts the sample to workers and firms observed at least twice
     - Restricts the sample to the largest connected set of workers and firms. Note: the firms and workers in the matched employer-employee data form a "graph" where the nodes are firms and the edges are workers' firm-to-firm transitions. The "largest connected set" of workers and firms is the maximal connected subgraph. The maximal connected subgraph is extracted using the *igraph* package.  
@@ -110,7 +110,7 @@ Since the CEEDD data is not available for public use, I provide simulated data t
 - For my project, I needed to estimate the AKM model many times using different subsets of the data. For example, I estimate the model once using the full sample, once using data from 2001 to 2005 only, once using data from 2010 to 2015 only, etc. The code contains "switches" to decide which subset of the data is used to estimate the AKM model. 
 - Finally, a variance decomposition is conducted. This variance decomposition shows the fraction of the variance in log earnings that is attributable to person effects, firm effects, and the covariance between the two. 
 
-#### [estimate_akm/original/code/utils](https://github.com/stephentino/estimate_akm/tree/main/original/utils)
+#### [utils](https://github.com/stephentino/estimate_akm/tree/main/original/utils)
 
 - This folder contains R scripts with important functions that are used by the main scripts described above. 
 
