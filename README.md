@@ -99,7 +99,7 @@ Since the CEEDD data is not available for public use, I provide simulated data t
 #### [1B_add_spells.R](https://github.com/stephentino/estimate_akm/blob/main/original/1B_add_spells.R)
 - A subset of jobs in the ROE file in the CEEDD are associated with start/end dates for the job spell. However, the start/end dates are only non-missing in the data in the year that the worker separates from the employer. This code "fills out" the start/end dates so that each "job-year" in the data with start/end dates available is associated with the start/end date of the spell.
 
-#### [2_compare_different_models.R](
+#### [2_compare_different_models.R](https://github.com/stephentino/estimate_akm/blob/main/original/2_compare_different_models.R)
 - This code tests that the *lfe package* estimates fixed effects models correctly using a subset of the full matched employer-employee data. I checked, for example, that the variance decomposition is nearly identical whether fixed effects are "partialled out" or not. I also checked that the "two step" procedure for estimating AKM produces nearly identical results as the "one step" procedure (see the discussion above). 
 
 #### [estimate_akm/original/code/3_estimate_two_step_akm.R](https://github.com/stephentino/estimate_akm/blob/main/original/2_compare_different_models.R)
